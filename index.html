@@ -25,7 +25,8 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 220px;
+            width: 90%;  /* Default to 90% width for small screens */
+            max-width: 250px; /* Max width to prevent oversizing */
             text-align: center;
             cursor: pointer;
         }
@@ -52,6 +53,24 @@
             display: inline-block;
             border-radius: 5px;
             border: 1px solid #000;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) { /* For tablets */
+            .product-grid {
+                gap: 10px;
+            }
+            .product-box {
+                width: 45%; /* 2 items per row */
+            }
+        }
+        @media (max-width: 480px) { /* For mobile phones */
+            .product-box {
+                width: 100%; /* Full width on small screens */
+                max-width: 90%;
+            }
+            .product-box img.enlarged {
+                transform: scale(2); /* Reduce enlargement on smaller screens */
+            }
         }
     </style>
 </head>
