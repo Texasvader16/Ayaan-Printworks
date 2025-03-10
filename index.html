@@ -75,14 +75,24 @@
         header img {
     display: block;
     margin: 0 auto;
-    width: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure responsiveness */
-    height: 700px; /* Increased size */
+    width: 100%; /* Ensure it adapts to screen width */
+    max-width: 600px; /* Prevent it from becoming too large on larger screens */
+    height: auto; /* Maintain aspect ratio */
     transform: rotate(-90deg); /* Rotate to landscape */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
+    object-fit: contain; /* Ensures the whole image is visible */
 }
+
+/* Mobile-specific styles */
+@media (max-width: 480px) { 
+    header img {
+        max-width: 100%; /* Use full width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+        transform: rotate(-90deg) scale(1.2); /* Slightly enlarge for better fit */
+    }
+}
+
     </style>
 </head>
 <body>
