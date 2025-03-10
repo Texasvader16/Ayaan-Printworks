@@ -72,12 +72,24 @@
                 transform: scale(2); /* Reduce enlargement on smaller screens */
             }
         }
+        header img {
+    display: block;
+    margin: 0 auto;
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure responsiveness */
+    height: 700px; /* Increased size */
+    transform: rotate(-90deg); /* Rotate to landscape */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
     </style>
 </head>
 <body>
     <header>
         <h1 class="title">Ayaan's Printworks</h1>
-        <h2 class="subheading">Custom 3D Printed Creations </h2>
+        <h2 class="subheading">Custom 3D Printed Creations</h2>
+        <img src="Background.jpg">
     </header>
     
     <main>
