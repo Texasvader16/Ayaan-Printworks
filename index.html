@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayaan's Printworks</title>
     <link rel="stylesheet" href="style.css">
+     <!-- Firebase SDKs
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js"></script> -->
+
     <style>
         body {
             background-color: skyblue;
@@ -122,11 +126,10 @@
         <h1 class="title">Ayaan's Printworks</h1>
         <h2 class="subheading">Custom 3D Printed Creations</h2>
         <img src="profile.webp" alt="Ayaan's Printworks Logo" class="header-logo">
-        <h1>We are not taking orders right now due to technical difficulties. Please check back at a later point in time.</h1>
     </header>
     
     <main>
-        <!-- <section id="product-gallery">
+        <section id="product-gallery">
             <h2>Click on an image to enlarge it! (Click again to shrink it.)</h2>
             <h2>When you’re ready, fill out the <a href="https://forms.gle/UdMSoLUAJVTZjUmg7" target="_blank"><strong>Google Form</strong></a> to place your order. (For nameplates, click on the image to access the specific form.)</h2>
             <h2>All payments must be made through Zelle. Orders will not be processed until payment is received.</h2>
@@ -314,7 +317,17 @@
                     <p>Click to customize your birthday nameplate</p>
                 </div>
             </div>
+        </section>
+         <!-- <section id="review-section">
+            <h2>Leave a Review</h2>
+            <textarea id="reviewText" placeholder="Write your review here..."></textarea>
+            <br>
+            <button onclick="submitReview()">Submit Review</button>
+        
+            <h2>Customer Reviews</h2>
+            <div id="reviewsContainer"></div>
         </section> -->
+        
     </main>
     
     <script>
@@ -323,5 +336,71 @@
             img.classList.toggle("enlarged");
         }
     </script>
+        <!--<script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyARw7sT5G_osNSo4PF3O8Yi2irqSF6haOQ",
+              authDomain: "ayaan-s-printworks.firebaseapp.com",
+              projectId: "ayaan-s-printworks",
+              storageBucket: "ayaan-s-printworks.firebasestorage.app",
+              messagingSenderId: "785792744208",
+              appId: "1:785792744208:web:a06854511551013c258395",
+              measurementId: "G-BW8C23SEFW"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script>
+          <script>
+            // Submit review to Firebase
+            function submitReview() {
+              const review = document.getElementById('reviewText').value;
+              if (review.trim() === '') return alert("Please write something!");
+          
+              db.collection("reviews").add({
+                text: review,
+                timestamp: new Date()
+              })
+              .then(() => {
+                alert("Thanks for your review!");
+                document.getElementById('reviewText').value = '';
+                loadReviews();
+              })
+              .catch((error) => {
+                console.error("Error adding review: ", error);
+              });
+            }
+          
+            // Load all reviews from Firebase
+            function loadReviews() {
+              const container = document.getElementById("reviewsContainer");
+              container.innerHTML = "";
+          
+              db.collection("reviews")
+                .orderBy("timestamp", "desc")
+                .get()
+                .then((querySnapshot) => {
+                  querySnapshot.forEach((doc) => {
+                    const review = doc.data().text;
+                    const div = document.createElement("div");
+                    div.textContent = `• ${review}`;
+                    div.style.padding = "5px 0";
+                    container.appendChild(div);
+                  });
+                });
+            }
+          
+            // Load reviews on page load
+            window.onload = loadReviews;
+          </script> -->
+          
 </body>
 </html>
