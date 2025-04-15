@@ -1,4 +1,4 @@
-﻿body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -67,4 +67,22 @@ main {
 
 span {
     color: #555;
+}
+#review-section {
+    padding: 30px;
+    background: #fff;
+    margin-top: 40px;
+}
+#reviewText {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#reviewsContainer {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
