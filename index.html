@@ -136,6 +136,40 @@
             <h2>ALL PAYMENTS ARE FINAL</h2>
             <h2>NO REFUNDS</h2>
             <div class="product-grid">
+                                <div class="product-box" onclick="toggleSize(this)">
+                    <h3>Zipper Bookmark - $6</h3>
+                    <img src="Bookmark.jpeg" alt="Zipper Bookmark">
+                    <p class="color-label">Filament Color Options:</p>
+                    <div class="color-options">
+                        <span style="background-color: red;"></span>
+                        <span style="background-color: orange;"></span>
+                        <span style="background-color: yellow;"></span>
+                        <span style="background-color: white;"></span>
+                        <span style="background-color: black;"></span>
+                        <span style="background-color: blue;"></span>
+                        <span style="background-color: green;"></span>
+                        <span style="background-color: gold;"></span>
+                        <span style="background-color: grey;"></span>
+                        <span style="background-color: #6699CC;"></span>
+                    </div>
+                </div>
+                <div class="product-box" onclick="toggleSize(this)">
+                    <h3>Travel Sized Tetris Game - $36</h3>
+                    <img src="Tetris.jpg" alt="Tetris Game">
+                    <p class="color-label">Filament Color Options:</p>
+                    <div class="color-options">
+                        <span style="background-color: red;"></span>
+                        <span style="background-color: orange;"></span>
+                        <span style="background-color: yellow;"></span>
+                        <span style="background-color: white;"></span>
+                        <span style="background-color: black;"></span>
+                        <span style="background-color: blue;"></span>
+                        <span style="background-color: green;"></span>
+                        <span style="background-color: gold;"></span>
+                        <span style="background-color: grey;"></span>
+                        <span style="background-color: #6699CC;"></span>
+                    </div>
+                </div>
                 <div class="product-box" onclick="toggleSize(this)">
                     <h3>Articulated Octopus - $8</h3>
                     <img src="product1.jpg" alt="Articulated Octopus">
@@ -306,6 +340,7 @@
                         <span style="background-color: #6699CC;"></span>
                     </div>
                 </div>
+
                 
                 <div class="product-box" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdBteNVwLRR5H5zjNR5yG32-qicc1Uc0OjykFmX0XMjYIkaTA/viewform?usp=header', '_blank');">
                     <h3>Custom Name Plate</h3>
@@ -317,18 +352,15 @@
                     <img src="birthday-nameplate.jpg" alt="Birthday Name Plate">
                     <p>Click to customize your birthday nameplate</p>
                 </div>
-            </div>
-        </section>
-         <!-- <section id="review-section">
-            <h2>Leave a Review</h2>
-            <textarea id="reviewText" placeholder="Write your review here..."></textarea>
-            <br>
-            <button onclick="submitReview()">Submit Review</button>
-        
-            <h2>Customer Reviews</h2>
-            <div id="reviewsContainer"></div>
-        </section> -->
-        
+
+                <div class="product-box" onclick="toggleSize(this)">
+                    <h3>CUSTOM PRINTS - Price Varries</h3>
+                    <img src="CustomOrder.png" alt="Custom Order">
+                    <p class="color-label">Want someting you dont see? PLACE A CUSTOM ORDER TODAY!</p>
+                    <p>In order to place a custom order, Email me at asmoharil@gmail.com with what you would like to order, a picture (If applicable) and if you would like anything specific done if it is a general product. (Adding someones name, adding a logo, etc.)</p>
+                </div>
+                
+        </section>        
     </main>
     
     <script>
@@ -336,72 +368,6 @@
             let img = element.querySelector("img");
             img.classList.toggle("enlarged");
         }
-    </script>
-        <!--<script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyARw7sT5G_osNSo4PF3O8Yi2irqSF6haOQ",
-              authDomain: "ayaan-s-printworks.firebaseapp.com",
-              projectId: "ayaan-s-printworks",
-              storageBucket: "ayaan-s-printworks.firebasestorage.app",
-              messagingSenderId: "785792744208",
-              appId: "1:785792744208:web:a06854511551013c258395",
-              measurementId: "G-BW8C23SEFW"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-          </script>
-          <script>
-            // Submit review to Firebase
-            function submitReview() {
-              const review = document.getElementById('reviewText').value;
-              if (review.trim() === '') return alert("Please write something!");
-          
-              db.collection("reviews").add({
-                text: review,
-                timestamp: new Date()
-              })
-              .then(() => {
-                alert("Thanks for your review!");
-                document.getElementById('reviewText').value = '';
-                loadReviews();
-              })
-              .catch((error) => {
-                console.error("Error adding review: ", error);
-              });
-            }
-          
-            // Load all reviews from Firebase
-            function loadReviews() {
-              const container = document.getElementById("reviewsContainer");
-              container.innerHTML = "";
-          
-              db.collection("reviews")
-                .orderBy("timestamp", "desc")
-                .get()
-                .then((querySnapshot) => {
-                  querySnapshot.forEach((doc) => {
-                    const review = doc.data().text;
-                    const div = document.createElement("div");
-                    div.textContent = `• ${review}`;
-                    div.style.padding = "5px 0";
-                    container.appendChild(div);
-                  });
-                });
-            }
-          
-            // Load reviews on page load
-            window.onload = loadReviews;
-          </script> -->
-          
+    </script>   
 </body>
 </html>
